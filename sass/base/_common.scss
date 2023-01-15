@@ -1,0 +1,19 @@
+body {
+  font-family: var(--main-font);
+  color: var(--second-color);
+  background-color: var(--primary-color);
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
