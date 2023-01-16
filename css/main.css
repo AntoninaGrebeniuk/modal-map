@@ -101,29 +101,23 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal.active,
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
+.overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
-
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
+.overlay.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  visibility: hidden;
   max-height: calc(100% - 20px);
   max-width: 75vw;
   width: 100%;
@@ -143,13 +137,29 @@ img {
   }
 }
 
-.modal-map__icon {
+.modal-map__btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 24px;
-  height: 24px;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--additional-color);
+  background-color: var(--second-color);
+  border-radius: 50%;
+  border: none;
   cursor: pointer;
+}
+
+.modal-map__btn:hover,
+.modal-map__btn:focus {
+  color: var(--accent-link-color);
+}
+
+.modal-map__icon {
+  fill: currentColor;
 }
 
 .modal-map__title {

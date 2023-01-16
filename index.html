@@ -25,15 +25,22 @@
   </head>
   <body>
     <section>
-      <button class="modal-map__btn-open js-open-modal" type="button" data-modal="map"></button>
+      <button
+        class="modal-map__btn-open js-open-modal"
+        type="button"
+        data-modal="map"
+        data-modal-map-open
+      ></button>
 
       <!-- Модальное окно ниже этой надписи -->
 
-      <div class="overlay js-overlay-modal">
-        <div class="modal" data-modal="map">
-          <svg class="modal-map__icon js-modal-close">
-            <use href="./images/icons.svg#icon-cross"></use>
-          </svg>
+      <div class="overlay is-hidden" data-modal-map>
+        <div class="modal">
+          <button class="modal-map__btn" type="button" data-modal-map-close>
+            <svg class="modal-map__icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-cross"></use>
+            </svg>
+          </button>
 
           <h2 class="modal-map__title">Our Locations</h2>
 
@@ -64,6 +71,7 @@
     </section>
 
     <!-- Скрипт к модалке копировать -->
-    <script src="./js/modal-open.js"></script>
+    <!-- <script src="./js/modal-open.js"></script> -->
+    <script src="./js/modal-locations.js"></script>
   </body>
 </html>
